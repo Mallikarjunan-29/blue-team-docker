@@ -1,0 +1,11 @@
+[]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[props]
+access = read : [ * ], write : [ admin ]
+export = system
+
+[inputs]
+access = read : [ * ], write : [ admin ]
+export = system

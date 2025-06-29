@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  splunk:
+    image: splunk/splunk:latest
+    container_name: splunk
+    mem_limit: 1G
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: blueteamlab@123 #change this if you want a different one
+      SPLUNK_HTTP_ENABLE_SSL: "true"
+      SPLUNK_ENABLE_LISTEN: tcp 1514
+      SPLUNK_MEM_LIMIT: 256M
+    ports:
+      - "8000:8000"  # Splunk Web UI
+      - "8088:8088"  # HTTP Event Collector
+      - "9997:9997"  # Universal forwarder port
+      - "1514:1514"
+      - "8089:8089"
+    volumes:
+      - ./splunk/splunk_logs/aws:/data/ingest/aws
+      - ./config:/opt/splunk/etc/apps/blue-team-lab
+    restart: unless-stopped
+
+
+networks:
+  splunk-net:
+    driver: bridge
+
