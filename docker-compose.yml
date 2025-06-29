@@ -19,7 +19,7 @@ services:
       - "8089:8089"
     volumes:
       - ./splunk/splunk_logs/aws:/data/ingest/aws
-      - ./config:/opt/splunk/etc/apps/blue-team-lab
+      - ./config:/opt/splunk/etc/apps/blue-team-docker
     restart: unless-stopped
 
 
