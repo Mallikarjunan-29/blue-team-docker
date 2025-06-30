@@ -45,7 +45,8 @@ should be executed from the folder where docker_compose.yml file is present
 
 Access Splunk at: https://localhost:8000 
 
-Login with: 👤 admin 🔐 <present in docker_compose.yml>
+Login with: 👤 admin
+ 🔐 blueteamlab@123
 
 Pull Logs from S3 Configure AWS credentials (~/.aws/credentials)
 Use s3_pull_logs.py to download logs to /data/ingest/aws
