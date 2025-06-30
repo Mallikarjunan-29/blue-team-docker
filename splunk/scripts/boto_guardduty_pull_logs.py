@@ -32,7 +32,7 @@ def fetch_guardduty_findings(region):
         os.makedirs(DEST_FOLDER, exist_ok=True)
         file_path = os.path.join(DEST_FOLDER, f'guardduty_findings_{region}.json')
         with open(file_path, 'w') as f:
-            json.dump(findings, f, indent=2)
+            json.dump(findings, f, indent=2, default=str)
         print(f"✅ Saved {len(findings)} findings to {file_path}")
     else:
         print(f"ℹ️ No findings found in {region} at this time.")
