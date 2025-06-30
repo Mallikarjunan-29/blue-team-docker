@@ -48,14 +48,17 @@ Access Splunk at: https://localhost:8000
 Login with: 👤 admin
  🔐 blueteamlab@123
 
+
 Pull Logs from S3 Configure AWS credentials (~/.aws/credentials)
 Use s3_pull_logs.py to download logs to /data/ingest/aws
+Use boto_guardduty_pull_logs.py to download logs to /data/ingest/guardduty
 
 Cron runs every 6 minutes to pull logs as per below setting. Please use the setting that fits your style
 
-*/6 * * * * /usr/bin/python3 /home//blue-team-docker/splunk/scripts/s3_pull_logs.py >> /home/cronlogs/cron.log
+*/6 * * * * /usr/bin/python3 /home//blue-team-docker/splunk/scripts/s3_pull_logs.py >> /home/cronlogs/s3.log
+*/6 * * * * /usr/bin/python3 /home//blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py >> /home/cronlogs/guardduty.log
 
-the path to s2_pull_logs.py from the docker is the second section
+##Be careful of all the paths mentioned above. use your paths##
 
 create the cronlogs folder in home directory 
 
