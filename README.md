@@ -46,7 +46,7 @@ should be executed from the folder where docker_compose.yml file is present
 Access Splunk at: https://localhost:8000 
 
 Login with: 👤 admin
- 🔐 blueteamlab@123
+ 🔐 Password in the docker compose fule
 
 
 Pull Logs from S3 Configure AWS credentials (~/.aws/credentials)
