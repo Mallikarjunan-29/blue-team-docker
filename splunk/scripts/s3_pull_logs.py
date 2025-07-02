@@ -6,8 +6,8 @@ from datetime import datetime
 from io import BytesIO
 
 # === CONFIGURATION ===
-BUCKET_NAME = 'aws-cloudtrail-logs-002125562743-9dd280fb'
-ACCOUNT_ID = '002125562743'
+BUCKET_NAME = 'aws-cloudtrail-logs-002125562743-9dd280fb' #use your s3 bucket name
+ACCOUNT_ID = '002125562743' # Use your account id
 REGIONS = ['us-east-1', 'us-east-2']
 DEST_FOLDER = os.path.expanduser('~/blue-team-lab/splunk/splunk_logs/aws')  # Relative path from scripts folder- maintain the folder structure or give the correct path under home/<user>/
 
