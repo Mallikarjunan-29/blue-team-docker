@@ -1,9 +1,9 @@
-🛡️ blue-team-lab — Cloud Security Logging & Detection Playground
+Blue-team-lab — Cloud Security Logging & Detection Playground
 Welcome to blue-team-lab — a modular, Dockerized security lab for ingesting, parsing, and detecting AWS CloudTrail events using Splunk.
 
 This is a barebone-but-powerful repo. Ideal for anyone looking to build a Blue Team detection lab from scratch — without relying on prebuilt SIEM apps.
 
-🚀 What This Lab Does
+What This Lab Does
 ✅ Ingests AWS CloudTrail logs from S3
 ✅ Uses a Python + Boto3 script to pull logs regularly via cron
 ✅ Parses CloudTrail JSON with a custom props.conf
@@ -11,7 +11,7 @@ This is a barebone-but-powerful repo. Ideal for anyone looking to build a Blue T
 ✅ Sets up a triggered alert to catch suspicious IAM events
 ✅ Modular repo: Easily expandable to include GuardDuty, Azure, GCP, SOAR (n8n), etc.
 
-📦 Project Structure
+Project Structure
 
 ── blue-team-docker
  ── config 
@@ -29,7 +29,10 @@ This is a barebone-but-powerful repo. Ideal for anyone looking to build a Blue T
 │   └── s3_pull_logs.py 
 └── splunk_logs 
      └── aws
-📌 Dependencies Docker
+
+Dependencies
+
+Docker
 
 Splunk Enterprise Docker image
 
