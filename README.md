@@ -61,6 +61,17 @@ update the boto scripts
 in the script boto_guardduty_pull_logs.py - Update your aws account id
 in the script s3_pull_logs.py - update your aws account id and bucker name
 
+Pull Logs from S3 Configure AWS credentials (~/.aws/credentials)
+Use s3_pull_logs.py to download logs to /data/ingest/aws
+Use boto_guardduty_pull_logs.py to download logs to /data/ingest/guardduty
+
+Cron runs every 6 minutes to pull logs as per below setting. Please use the setting that fits your style
+
+*/6 * * * * /usr/bin/python3 /home/blue-team-docker/splunk/scripts/s3_pull_logs.py >> /home/blue-team-docker/cronlogs/s3.log
+*/6 * * * * /usr/bin/python3 /home/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py >> /home/blue-team-docker/cronlogs/guardduty.log
+
+##e path for the script file should be the one where the script is present from the home directory. If git clone is run from the home directory then the above path would be enough##
+
 🛠️ How to Run This Lab
 
 1. Clone the Repo
@@ -78,19 +89,6 @@ Access Splunk at: https://localhost:8000
 
 Login with: 👤 admin
  🔐 Password in the docker compose file
-
-
-Pull Logs from S3 Configure AWS credentials (~/.aws/credentials)
-Use s3_pull_logs.py to download logs to /data/ingest/aws
-Use boto_guardduty_pull_logs.py to download logs to /data/ingest/guardduty
-
-Cron runs every 6 minutes to pull logs as per below setting. Please use the setting that fits your style
-
-*/6 * * * * /usr/bin/python3 /home/blue-team-docker/splunk/scripts/s3_pull_logs.py >> /home/blue-team-docker/cronlogs/s3.log
-*/6 * * * * /usr/bin/python3 /home/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py >> /home/blue-team-docker/cronlogs/guardduty.log
-
-##e path for the script file should be the one where the script is present from the home directory. If git clone is run from the home directory then the above path would be enough##
-
 
 
 Alerting Use Case Configured to catch suspicious IAM activity:
