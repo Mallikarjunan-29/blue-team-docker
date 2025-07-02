@@ -2,7 +2,7 @@ import boto3
 import json
 import os
 
-ACCOUNT_ID = '002125562743'
+ACCOUNT_ID = '002125562743' # use your account id from aws
 REGIONS = ['us-east-1', 'us-east-2']
 DEST_FOLDER = os.path.expanduser('~/blue-team-lab/splunk/splunk_logs/guardduty')
 
