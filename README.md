@@ -56,6 +56,10 @@ sudo ./aws/install
 
 2- aws configure ( for configuring the aws read only user which would connect with buckets to pull data)
 
+update the boto scripts
+
+in the script boto_guardduty_pull_logs.py - Update your aws account id
+in the script s3_pull_logs.py - update your aws account id and bucker name
 
 🛠️ How to Run This Lab
 
