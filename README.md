@@ -29,6 +29,33 @@ This is a barebone-but-powerful repo. Ideal for anyone looking to build a Blue T
 │   └── s3_pull_logs.py 
 └── splunk_logs 
      └── aws
+📌 Dependencies Docker
+
+Splunk Enterprise Docker image
+
+Python 3.x
+
+boto3, botocore
+
+Install Python:
+
+sudo apt install python
+sudo apt update
+sudo apt upgrade
+
+Install boto3:
+
+pip install boto3
+
+Configure AWS account which will connect with buckers for pulling data using script.
+1 - install aws cli
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+2- aws configure ( for configuring the aws read only user which would connect with buckets to pull data)
+
 
 🛠️ How to Run This Lab
 
@@ -46,7 +73,7 @@ should be executed from the folder where docker_compose.yml file is present
 Access Splunk at: https://localhost:8000 
 
 Login with: 👤 admin
- 🔐 Password in the docker compose fule
+ 🔐 Password in the docker compose file
 
 
 Pull Logs from S3 Configure AWS credentials (~/.aws/credentials)
@@ -55,30 +82,17 @@ Use boto_guardduty_pull_logs.py to download logs to /data/ingest/guardduty
 
 Cron runs every 6 minutes to pull logs as per below setting. Please use the setting that fits your style
 
-*/6 * * * * /usr/bin/python3 /home//blue-team-docker/splunk/scripts/s3_pull_logs.py >> /home/cronlogs/s3.log
-*/6 * * * * /usr/bin/python3 /home//blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py >> /home/cronlogs/guardduty.log
+*/6 * * * * /usr/bin/python3 /home/blue-team-docker/splunk/scripts/s3_pull_logs.py >> /home/blue-team-docker/cronlogs/s3.log
+*/6 * * * * /usr/bin/python3 /home/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py >> /home/blue-team-docker/cronlogs/guardduty.log
 
-##Be careful of all the paths mentioned above. use your paths##
+##e path for the script file should be the one where the script is present from the home directory. If git clone is run from the home directory then the above path would be enough##
 
-create the cronlogs folder in home directory 
+
 
 Alerting Use Case Configured to catch suspicious IAM activity:
 
 index="aws-log" | spath input=_raw path=Records{} output=record | mvexpand record | spath input=record path=eventName output=event | spath input=record path=userIdentity.arn output=user_arn | spath input=record path=eventTime output=Timestamp | spath input=record path=sourceIPAddress output=SourceIP | search event IN ("Create*", "Delete*", "Attach*") | eval is_assumed_role=if(match(user_arn, "assumed-role"), "yes", "no") | search is_assumed_role="no" | table Timestamp, SourceIP, user_arn, event
 
-📌 Dependencies Docker
-
-Splunk Enterprise Docker image
-
-Python 3.x
-
-boto3, botocore
-
-Install boto3:
-
-pip install boto3
-
-Do this before setting up the cron
 
 
 🙌 Credits Created by Mallikarjunan K (Arjun) 
