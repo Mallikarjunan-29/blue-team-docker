@@ -4,7 +4,7 @@ from datetime import datetime
 
 # --- Config ---
 BUCKET_NAME = "my-gcp-audit-logs-arjun2407"
-DEST_DIR = "~/blue-team-docker/splunk/splunk_logs/gcplogs"
+DEST_DIR = os.path.expanduser("~/blue-team-docker/splunk/splunk_logs/gcplogs")
 PREFIX = "cloudaudit.googleapis.com/activity/"
 
 # --- Auth via gcloud CLI ---
