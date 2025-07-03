@@ -66,7 +66,7 @@ sudo ./aws/install
 
 2- aws configure ( for configuring the aws read only user which would connect with buckets to pull data)
 
-Configure Google cloud account
+##Configure Google cloud account##
 
 sudo pip install google-cloud-storage
 sudo snap install google-cloud-sdk --classic
