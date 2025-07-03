@@ -13,42 +13,49 @@ What This Lab Does
 
 Project Structure
 
-── blue-team-docker
- ── config 
-│   ├── default 
-│   │   ├── app.conf 
-│   │   ├── indexes.conf 
-│   │   ├── inputs.conf 
-│   │   └── props.conf 
-│   └── metadata 
-│   └── default.meta 
-├── docker-compose.yml 
-└── splunk 
-├── README 
-├── scripts 
-│   └── s3_pull_logs.py 
-└── splunk_logs 
-     └── aws
+blue-team-docker/
+├── config
+│   ├── default
+│   │   ├── app.conf
+│   │   ├── indexes.conf
+│   │   ├── inputs.conf
+│   │   └── props.conf
+│   └── metadata
+│       └── default.meta
+├── Cronlog
+├── docker-compose.yml
+├── README.md
+├── setup-cron.sh
+└── splunk
+    ├── README
+    ├── scripts
+    │   ├── boto_guardduty_pull_logs.py
+    │   ├── gcp_pull_logs.py
+    │   └── s3_pull_logs.py
+    └── splunk_logs
+        ├── aws
+        ├── gcplogs
+        └── guardduty
 
-Dependencies
+## Dependencies##
 
-Docker
-
-Splunk Enterprise Docker image
+Install Docker in Ubuntu 
 
 Python 3.x
 
 boto3, botocore
 
-Install Python:
+## Install Python:##
 
 sudo apt install python
 sudo apt update
 sudo apt upgrade
 
-Install boto3:
+## Install boto3:##
 
 pip install boto3
+
+## AWS CLI Configuration ##
 
 Configure AWS account which will connect with buckers for pulling data using script.
 1 - install aws cli
@@ -59,45 +66,37 @@ sudo ./aws/install
 
 2- aws configure ( for configuring the aws read only user which would connect with buckets to pull data)
 
-update the boto scripts
+Configure Google cloud account
 
-in the script boto_guardduty_pull_logs.py - Update your aws account id
-in the script s3_pull_logs.py - update your aws account id and bucker name
+sudo pip install google-cloud-storage
+sudo snap install google-cloud-sdk --classic
+gcloud auth application-default login
+gcloud auth application-default set-quota-project Project_Name
 
-Pull Logs from S3 Configure AWS credentials (~/.aws/credentials)
-Use s3_pull_logs.py to download logs to /data/ingest/aws
-Use boto_guardduty_pull_logs.py to download logs to /data/ingest/guardduty
-
-Cron runs every 6 minutes to pull logs as per below setting. Please use the setting that fits your style
-
-*/6 * * * * /usr/bin/python3 /home/blue-team-docker/splunk/scripts/s3_pull_logs.py >> /home/blue-team-docker/cronlogs/s3.log
-*/6 * * * * /usr/bin/python3 /home/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py >> /home/blue-team-docker/cronlogs/guardduty.log
-
-##e path for the script file should be the one where the script is present from the home directory. If git clone is run from the home directory then the above path would be enough##
 
 🛠️ How to Run This Lab
 
-1. Clone the Repo
+## 1. Clone the Repo from the home directory ##
 git clone https://github.com/Mallikarjunan-29/blue-team-docker.git
 
 cd blue-team-docker
 
-Start Splunk Container
+## Provide execution access to cron ##
+chmod +x setup-cron.sh
+
+## Execute the cron setup
+./setup-cron.sh
+
+## Start Splunk Container##
 
 docker compose up -d
-
-should be executed from the folder where docker_compose.yml file is present
 
 Access Splunk at: https://localhost:8000 
 
 Login with: 👤 admin
  🔐 Password in the docker compose file
 
-
-Alerting Use Case Configured to catch suspicious IAM activity:
-
-index="aws-log" | spath input=_raw path=Records{} output=record | mvexpand record | spath input=record path=eventName output=event | spath input=record path=userIdentity.arn output=user_arn | spath input=record path=eventTime output=Timestamp | spath input=record path=sourceIPAddress output=SourceIP | search event IN ("Create*", "Delete*", "Attach*") | eval is_assumed_role=if(match(user_arn, "assumed-role"), "yes", "no") | search is_assumed_role="no" | table Timestamp, SourceIP, user_arn, event
-
+## Splunk is set up. Now fire all queries you need , create alerts and blue- team to your hearts content##
 
 
 🙌 Credits Created by Mallikarjunan K (Arjun) 

@@ -20,6 +20,7 @@ services:
     volumes:
       - ./splunk/splunk_logs/aws:/data/ingest/aws
       - ./splunk/splunk_logs/guardduty:/data/ingest/guardduty
+      - ./splunk/splunk_logs/gcp:/data/ingest/gcp
       - ./config:/opt/splunk/etc/apps/blue-team-docker
 
     restart: unless-stopped
