@@ -3,7 +3,7 @@
 
 # Use full path for script location
 SCRIPT_PATH="$(cd "$(dirname "$0")" && pwd)/gcp_pull_logs.py"
-LOG_DIR="$(cd "$(dirname "$0")" && pwd)/../Cronlog"
+LOG_DIR="$(cd "$(dirname "$0")" && pwd)/Cronlog"
 LOG_FILE="$LOG_DIR/gcppull.log"
 
 # Cron command (every 5 minutes)
