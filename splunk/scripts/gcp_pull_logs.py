@@ -9,7 +9,7 @@ PREFIX = "cloudaudit.googleapis.com/activity/"
 
 # --- Auth via gcloud CLI ---
 # Assumes you've already authenticated using `gcloud auth application-default login`
-storage_client = storage.Client()
+storage_client = storage.Client(project="top-cedar-464719-i4")
 
 def download_new_logs():
     bucket = storage_client.bucket(BUCKET_NAME)
