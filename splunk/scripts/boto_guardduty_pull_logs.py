@@ -4,7 +4,7 @@ import os
 
 ACCOUNT_ID = '002125562743' # use your account id from aws
 REGIONS = ['us-east-1', 'us-east-2']
-DEST_FOLDER = os.path.expanduser('~/blue-team-lab/splunk/splunk_logs/guardduty')
+DEST_FOLDER = os.path.expanduser('~/blue-team-docker/splunk/splunk_logs/guardduty')
 
 def fetch_guardduty_findings(region):
     print(f"\n🔍 Fetching GuardDuty findings in {region}...")
