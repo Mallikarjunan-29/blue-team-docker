@@ -6,10 +6,10 @@ This is a barebone-but-powerful repo. Ideal for anyone looking to build a Blue T
 What This Lab Does
 ✅ Ingests AWS CloudTrail logs from S3
 ✅ Uses a Python + Boto3 script to pull logs regularly via cron
-✅ Parses CloudTrail JSON with a custom props.conf
+✅ Parses JSON logs with a custom props.conf
 ✅ Mounts as a Splunk App using Docker
-✅ Sets up a triggered alert to catch suspicious IAM events
-✅ Modular repo: Easily expandable to include GuardDuty, Azure, GCP, SOAR (n8n), etc.
+✅ Sets up a triggered alert to catch suspicious events
+✅ Modular repo: Easily expandable to include multi lab environments
 
 Project Structure
 
