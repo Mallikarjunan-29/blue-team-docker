@@ -7,8 +7,7 @@ BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 SCRIPT_PATH="$BASE_DIR/splunk/scripts/gcp_pull_logs.py"
 
 # Log output (goes into Cronlog folder at repo root)
-LOG_FILE="$BASE_DIR/Cronlog/pull.log"
-LOG_FILE="$LOG_DIR/gcppull.log"
+LOG_FILE="$BASE_DIR/Cronlog/gcppull.log"
 
 # Cron command (every 5 minutes)
 CRON_CMD="*/5 * * * * /usr/bin/python3 $SCRIPT_PATH >> $LOG_FILE 2>&1"
