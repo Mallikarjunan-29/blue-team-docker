@@ -1,9 +1,13 @@
 #!/bin/bash
 # setup-cron.sh – Install cron job for GCP log pull script
+# Get absolute path to THIS script
+BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# Use full path for script location
-SCRIPT_PATH="$(cd "$(dirname "$0")" && pwd)/gcp_pull_logs.py"
-LOG_DIR="$(cd "$(dirname "$0")" && pwd)/Cronlog"
+# Python script (relative to repo structure)
+SCRIPT_PATH="$BASE_DIR/splunk/scripts/gcp_pull_logs.py"
+
+# Log output (goes into Cronlog folder at repo root)
+LOG_FILE="$BASE_DIR/Cronlog/pull.log"
 LOG_FILE="$LOG_DIR/gcppull.log"
 
 # Cron command (every 5 minutes)
