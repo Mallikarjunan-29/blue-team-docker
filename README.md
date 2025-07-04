@@ -1,105 +1,139 @@
-Blue-team-lab — Cloud Security Logging & Detection Playground
-Welcome to blue-team-lab — a modular, Dockerized security lab for ingesting, parsing, and detecting AWS CloudTrail events using Splunk.
+🛡️ Blue-Team Lab: Cloud Logging & Detection Playground
 
-This is a barebone-but-powerful repo. Ideal for anyone looking to build a Blue Team detection lab from scratch — without relying on prebuilt SIEM apps.
+A modular, Dockerized detection lab for ingesting, parsing, and automating AWS + GCP logs into Splunk — built from scratch, no prebuilt SIEM apps, no fluff.
 
-What This Lab Does
+Ideal for SOC analysts, blue teamers, and detection engineers who want to understand every moving part of log ingestion and parsing in a real-world home lab.
+
+
+---
+
+🔍 What This Lab Does
+
 ✅ Ingests AWS CloudTrail logs from S3
-✅ Uses a Python + Boto3 script to pull logs regularly via cron
-✅ Parses JSON logs with a custom props.conf
-✅ Mounts as a Splunk App using Docker
-✅ Sets up a triggered alert to catch suspicious events
-✅ Modular repo: Easily expandable to include multi lab environments
+✅ Pulls GuardDuty and GCP Audit logs via Python scripts
+✅ Uses cron jobs to automate ingestion
+✅ Parses logs using props.conf, inputs.conf, and indexes.conf
+✅ All config lives inside a Splunk App, mounted via Docker
+✅ Fully modular — easily extendable to other cloud providers or sources
+✅ Minimalist but powerful: no GUI bloat, just raw detection muscle
 
-Project Structure
+
+---
+
+📁 Project Structure
 
 blue-team-docker/
-├── config
-│   ├── default
-│   │   ├── app.conf
-│   │   ├── indexes.conf
-│   │   ├── inputs.conf
-│   │   └── props.conf
-│   └── metadata
-│       └── default.meta
-├── Cronlog
+├── config/
+│   ├── default/
+│   │   ├── app.conf
+│   │   ├── indexes.conf
+│   │   ├── inputs.conf
+│   │   └── props.conf
+│   └── metadata/default.meta
+├── Cronlog/
 ├── docker-compose.yml
-├── README.md
 ├── setup-cron.sh
-└── splunk
-    ├── README
-    ├── scripts
-    │   ├── boto_guardduty_pull_logs.py
-    │   ├── gcp_pull_logs.py
-    │   └── s3_pull_logs.py
-    └── splunk_logs
-        ├── aws
-        ├── gcplogs
-        └── guardduty
+├── splunk/
+│   ├── README
+│   ├── scripts/
+│   │   ├── boto_guardduty_pull_logs.py
+│   │   ├── gcp_pull_logs.py
+│   │   └── s3_pull_logs.py
+│   └── splunk_logs/
+│       ├── aws/
+│       ├── gcplogs/
+│       └── guardduty/
+└── README.md
 
-## Dependencies##
 
-Install Docker in Ubuntu 
+---
+
+⚙️ Dependencies
 
 Python 3.x
 
-boto3, botocore
+Docker
 
-## Install Python:##
+boto3, botocore, and google-cloud-storage Python packages
 
-sudo apt install python
-sudo apt update
-sudo apt upgrade
+GCP CLI (gcloud) + AWS CLI configured with least-privilege access
 
-## Install boto3:##
 
-pip install boto3
+Install Python:
 
-## AWS CLI Configuration ##
+sudo apt update && sudo apt install python3 python3-pip -y
 
-Configure AWS account which will connect with buckers for pulling data using script.
-1 - install aws cli
+Install Boto3:
+
+pip3 install boto3 botocore
+
+Install GCP SDK:
+
+sudo pip install google-cloud-storage
+sudo snap install google-cloud-sdk --classic
+
+
+---
+
+💪 AWS CLI Setup
+
+1. Install AWS CLI:
+
+
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 
-2- aws configure ( for configuring the aws read only user which would connect with buckets to pull data)
+2. Configure it:
 
-## Configure Google cloud account ##
 
-sudo pip install google-cloud-storage
-sudo snap install google-cloud-sdk --classic
+
+aws configure
+
+Use read-only credentials for pulling logs from S3 buckets.
+
+
+---
+
+☁️ GCP CLI Setup
+
 gcloud auth application-default login
-gcloud auth application-default set-quota-project Project_Name
+gcloud auth application-default set-quota-project <YOUR_PROJECT_NAME>
 
 
-🛠️ How to Run This Lab
+---
 
-## 1. Clone the Repo from the home directory ##
+🚀 Running the Lab
+
 git clone https://github.com/Mallikarjunan-29/blue-team-docker.git
-
 cd blue-team-docker
 
-## Provide execution access to cron ##
 chmod +x setup-cron.sh
+./setup-cron.sh  # sets up cron job to pull logs
 
-## Execute the cron setup
-./setup-cron.sh
+docker compose up -d  # starts Splunk with mounted config
 
-## Start Splunk Container##
-
-docker compose up -d
-
-Access Splunk at: https://localhost:8000 
-
-Login with: 👤 admin
- 🔐 Password in the docker compose file
-
-## Splunk is set up. Now fire all queries you need , create alerts and blue- team to your hearts content##
+Access Splunk at 👉 https://localhost:8000
+Login: admin / password from docker-compose.yml
 
 
-🙌 Credits Created by Mallikarjunan K (Arjun) 
-Cybersecurity | SOC | Blue Team | DevSecOps 2025 
+---
 
-Edition# blue-team-docker
+🌟 Like it? Star it. Use it. Fork it.
+
+This project is open-source and built to be extended. If it helps you learn or speeds up your detection engineering workflow:
+
+🔗 Give it a star
+👁️ Fork and remix it
+🔧 Open issues or improvements — collaboration welcome
+
+
+---
+
+👨‍💼 Created By
+
+Mallikarjunan K (Arjun)
+Cybersecurity | SOC | Blue Team | DevSecOps
+2025 Edition — blue-team-docker
+
