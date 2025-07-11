@@ -1,0 +1,2182 @@
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x7d0085489420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x74c860a49420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x701e8906d420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x772644a01420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x75d7a08fd420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x79828cfe1420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x7e293d489420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x72c005d8d420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x79083e989420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x77614fb01420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x7d5399449420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x74a370951420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x7cd2ab649420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x76c6115f9420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x71ec64289420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x77c9e63e1420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 464, in send
+    urllib_response = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 509, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/lib/python3/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPSConnection object at 0x72da46901420>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 42, in <module>
+    fetch_guardduty_findings(region)
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/boto_guardduty_pull_logs.py", line 13, in fetch_guardduty_findings
+    detectors = gd_client.list_detectors()['DetectorIds']
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 595, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1040, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/client.py", line 1064, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 200, in _send_request
+    while self._needs_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 360, in _needs_retry
+    responses = self._event_emitter.emit(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 279, in _do_get_response
+    http_response = self._send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/endpoint.py", line 383, in _send
+    return self.http_session.send(request)
+  File "/home/mallikarjunan/.local/lib/python3.10/site-packages/botocore/httpsession.py", line 493, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://guardduty.us-east-1.amazonaws.com/detector"
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json
+
+🔍 Fetching GuardDuty findings in us-east-1...
+❌ No GuardDuty detector found in us-east-1. Maybe GuardDuty isn't enabled here.
+
+🔍 Fetching GuardDuty findings in us-east-2...
+✅ Saved 364 findings to /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/guardduty/guardduty_findings_us-east-2.json

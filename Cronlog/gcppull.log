@@ -1,0 +1,1866 @@
+[2025-07-03 15:20:26.971291] Starting log pull...
+Downloading cloudaudit.googleapis.com/activity/2025/07/03/16:00:00_16:59:59_S0.json → /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/gcp/cloudaudit.googleapis.com_activity_2025_07_03_16:00:00_16:59:59_S0.json
+Downloading cloudaudit.googleapis.com/activity/2025/07/03/17:00:00_17:59:59_S0.json → /home/mallikarjunan/blue-team-docker/splunk/splunk_logs/gcp/cloudaudit.googleapis.com_activity_2025_07_03_17:00:00_17:59:59_S0.json
+[2025-07-03 15:20:29.726097] Done.
+[2025-07-03 15:25:51.684081] Starting log pull...
+[2025-07-03 15:25:52.992335] Done.
+[2025-07-03 15:30:19.899245] Starting log pull...
+[2025-07-03 15:30:21.073807] Done.
+[2025-07-03 15:35:26.993349] Starting log pull...
+[2025-07-03 15:35:28.687824] Done.
+[2025-07-03 15:40:24.920477] Starting log pull...
+[2025-07-03 15:40:25.579004] Done.
+[2025-07-03 15:45:20.931387] Starting log pull...
+[2025-07-03 15:45:22.707117] Done.
+[2025-07-03 20:30:24.478463] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7e51c31e3520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7e51c31e3520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7e51c31e3520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7e51c31e3520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7e51c31e3520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-03 20:45:27.251091] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x763b2f6faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x763b2f6faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x763b2f6faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x763b2f6faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x763b2f6faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-03 21:05:14.525760] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7361d56faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7361d56faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7361d56faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7361d56faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7361d56faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-03 21:10:09.415388] Starting log pull...
+[2025-07-03 21:10:10.166573] Done.
+[2025-07-03 21:15:11.951686] Starting log pull...
+[2025-07-03 21:15:12.735815] Done.
+[2025-07-03 21:20:07.202699] Starting log pull...
+[2025-07-03 21:20:08.273134] Done.
+[2025-07-04 08:00:27.532393] Starting log pull...
+[2025-07-04 08:00:29.613141] Done.
+[2025-07-04 08:05:09.918714] Starting log pull...
+[2025-07-04 08:05:10.547012] Done.
+[2025-07-04 08:10:11.986771] Starting log pull...
+[2025-07-04 08:10:12.904972] Done.
+[2025-07-04 08:15:07.709710] Starting log pull...
+[2025-07-04 08:15:08.284954] Done.
+[2025-07-04 08:20:03.773772] Starting log pull...
+[2025-07-04 08:20:04.951163] Done.
+[2025-07-04 08:25:05.330515] Starting log pull...
+[2025-07-04 08:25:07.369375] Done.
+[2025-07-04 08:30:08.946059] Starting log pull...
+[2025-07-04 08:30:09.912927] Done.
+[2025-07-04 08:35:09.830100] Starting log pull...
+[2025-07-04 08:35:10.460965] Done.
+[2025-07-04 08:40:04.580597] Starting log pull...
+[2025-07-04 08:40:05.476691] Done.
+[2025-07-04 08:45:07.449697] Starting log pull...
+[2025-07-04 08:45:08.038224] Done.
+[2025-07-04 08:50:14.274449] Starting log pull...
+[2025-07-04 08:50:15.460953] Done.
+[2025-07-04 10:00:15.844583] Starting log pull...
+[2025-07-04 10:00:16.376390] Done.
+[2025-07-04 10:08:08.769707] Starting log pull...
+[2025-07-04 10:08:10.200903] Done.
+[2025-07-04 10:10:35.556742] Starting log pull...
+[2025-07-04 10:10:36.983029] Done.
+[2025-07-04 10:15:19.106699] Starting log pull...
+[2025-07-04 10:15:20.455181] Done.
+[2025-07-04 11:56:16.806549] Starting log pull...
+[2025-07-04 11:56:18.776386] Done.
+[2025-07-04 12:00:14.626424] Starting log pull...
+[2025-07-04 12:00:15.802185] Done.
+[2025-07-04 12:05:33.135348] Starting log pull...
+[2025-07-04 12:05:34.879024] Done.
+[2025-07-04 12:10:16.384797] Starting log pull...
+[2025-07-04 12:10:18.474497] Done.
+[2025-07-04 12:16:08.668661] Starting log pull...
+[2025-07-04 12:16:10.560370] Done.
+[2025-07-04 12:20:15.609822] Starting log pull...
+[2025-07-04 12:20:16.903846] Done.
+[2025-07-04 12:25:17.961689] Starting log pull...
+[2025-07-04 12:25:19.574579] Done.
+[2025-07-04 12:30:13.998187] Starting log pull...
+[2025-07-04 12:30:16.072676] Done.
+[2025-07-04 12:35:20.788541] Starting log pull...
+[2025-07-04 12:35:21.989182] Done.
+[2025-07-04 12:40:15.113148] Starting log pull...
+[2025-07-04 12:40:16.522793] Done.
+[2025-07-04 12:45:16.005002] Starting log pull...
+[2025-07-04 12:45:17.749636] Done.
+[2025-07-04 12:50:20.847286] Starting log pull...
+[2025-07-04 12:50:21.745775] Done.
+[2025-07-04 12:55:20.550030] Starting log pull...
+[2025-07-04 12:55:21.683353] Done.
+[2025-07-04 13:00:18.640800] Starting log pull...
+[2025-07-04 13:00:19.886744] Done.
+[2025-07-04 13:05:19.743813] Starting log pull...
+[2025-07-04 13:05:20.570748] Done.
+[2025-07-04 13:10:22.294073] Starting log pull...
+[2025-07-04 13:10:23.526246] Done.
+[2025-07-04 13:15:20.041419] Starting log pull...
+[2025-07-04 13:15:21.608875] Done.
+[2025-07-04 13:20:59.995196] Starting log pull...
+[2025-07-04 13:21:02.271051] Done.
+[2025-07-04 13:25:19.892771] Starting log pull...
+[2025-07-04 13:25:21.364691] Done.
+[2025-07-04 13:30:20.423771] Starting log pull...
+[2025-07-04 13:30:21.917727] Done.
+[2025-07-04 13:35:11.764867] Starting log pull...
+[2025-07-04 13:35:13.100013] Done.
+[2025-07-04 13:40:05.077532] Starting log pull...
+[2025-07-04 13:40:07.132478] Done.
+[2025-07-04 13:45:16.848684] Starting log pull...
+[2025-07-04 13:45:18.061593] Done.
+[2025-07-04 13:50:31.482234] Starting log pull...
+[2025-07-04 13:50:33.995263] Done.
+[2025-07-04 14:15:24.334005] Starting log pull...
+[2025-07-04 14:15:26.033166] Done.
+[2025-07-04 14:20:15.558861] Starting log pull...
+[2025-07-04 14:20:17.002509] Done.
+[2025-07-04 14:25:17.641789] Starting log pull...
+[2025-07-04 14:25:19.381793] Done.
+[2025-07-04 14:30:05.190616] Starting log pull...
+[2025-07-04 14:30:06.171582] Done.
+[2025-07-04 16:40:28.583972] Starting log pull...
+[2025-07-04 16:40:30.033816] Done.
+[2025-07-09 16:10:10.127579] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7bc7fb6f93f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7bc7fb6f93f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7bc7fb6f93f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7bc7fb6f93f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7bc7fb6f93f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-09 16:20:04.557691] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7dcac03f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7dcac03f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7dcac03f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7dcac03f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7dcac03f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-09 16:25:03.991448] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f022c7f1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f022c7f1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f022c7f1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f022c7f1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f022c7f1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-09 16:30:04.188804] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x77800e8f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x77800e8f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x77800e8f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x77800e8f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x77800e8f9f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-09 16:40:02.644249] Starting log pull...
+[2025-07-09 16:40:07.892893] Done.
+[2025-07-09 16:45:02.566712] Starting log pull...
+[2025-07-09 16:45:02.999338] Done.
+[2025-07-09 16:51:14.950500] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7aa00c68d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7aa00c68d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7aa00c68d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7aa00c68d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7aa00c68d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-09 16:55:03.968623] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x719ba27a5150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x719ba27a5150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x719ba27a5150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x719ba27a5150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x719ba27a5150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-09 17:00:03.319492] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x781e8e299150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x781e8e299150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x781e8e299150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x781e8e299150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x781e8e299150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-09 17:06:12.499854] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7305fac8d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7305fac8d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7305fac8d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7305fac8d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7305fac8d150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-09 17:10:03.407240] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x73e93da99150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x73e93da99150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x73e93da99150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x73e93da99150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x73e93da99150>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-09 17:15:09.786503] Starting log pull...
+[2025-07-09 17:15:10.312143] Done.
+[2025-07-09 17:20:07.686702] Starting log pull...
+[2025-07-09 17:20:08.187850] Done.
+[2025-07-09 17:25:10.434282] Starting log pull...
+[2025-07-09 17:25:11.173752] Done.
+[2025-07-10 08:35:09.616791] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7d5fc13faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7d5fc13faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7d5fc13faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7d5fc13faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7d5fc13faa10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-10 08:40:04.700107] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x796f4cbf2a10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x796f4cbf2a10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x796f4cbf2a10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x796f4cbf2a10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x796f4cbf2a10>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-10 08:45:03.322281] Starting log pull...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 700, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 383, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1017, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7821d76e1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 784, in urlopen
+    return self.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 756, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 576, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7821d76e1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 187, in __call__
+    response = self.session.request(
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 544, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 657, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7821d76e1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 535, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+  File "/usr/local/lib/python3.10/dist-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/usr/local/lib/python3.10/dist-packages/google/auth/transport/requests.py", line 194, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7821d76e1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 33, in <module>
+    download_new_logs()
+  File "/home/mallikarjunan/blue-team-docker/splunk/scripts/gcp_pull_logs.py", line 20, in download_new_logs
+    for blob in blobs:
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 208, in _items_iter
+    for page in self._page_iter(increment=False):
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 244, in _page_iter
+    page = self._next_page()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 373, in _next_page
+    response = self._get_next_page_response()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/page_iterator.py", line 432, in _get_next_page_response
+    return self.api_request(
+  File "/usr/local/lib/python3.10/dist-packages/google/cloud/storage/_http.py", line 90, in api_request
+    return call()
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+  File "/usr/local/lib/python3.10/dist-packages/google/api_core/retry/retry_base.py", line 229, in _retry_error_helper
+    raise final_exc from source_exc
+google.api_core.exceptions.RetryError: Timeout of 120.0s exceeded, last exception: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7821d76e1f00>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[2025-07-10 08:50:02.719114] Starting log pull...
+[2025-07-10 08:50:03.438469] Done.
+[2025-07-10 08:55:41.740243] Starting log pull...
+[2025-07-10 08:55:43.011818] Done.
+[2025-07-10 09:00:10.064177] Starting log pull...
+[2025-07-10 09:00:11.151906] Done.
+[2025-07-10 09:09:40.347633] Starting log pull...
+[2025-07-10 09:09:41.213209] Done.
+[2025-07-10 09:10:08.007008] Starting log pull...
+[2025-07-10 09:10:08.609201] Done.
+[2025-07-10 09:15:16.888918] Starting log pull...
+[2025-07-10 09:15:17.573829] Done.
+[2025-07-10 09:20:05.912408] Starting log pull...
+[2025-07-10 09:20:06.625388] Done.
+[2025-07-10 09:25:04.861390] Starting log pull...
+[2025-07-10 09:25:05.830857] Done.
+[2025-07-10 09:30:04.792033] Starting log pull...
+[2025-07-10 09:30:05.427214] Done.
+[2025-07-10 09:35:10.187947] Starting log pull...
+[2025-07-10 09:35:11.388650] Done.
+[2025-07-10 09:40:07.188576] Starting log pull...
+[2025-07-10 09:40:07.728185] Done.
+[2025-07-10 09:45:07.313591] Starting log pull...
+[2025-07-10 09:45:07.993954] Done.
+[2025-07-10 09:50:03.164415] Starting log pull...
+[2025-07-10 09:50:04.045591] Done.
+[2025-07-10 09:55:08.559433] Starting log pull...
+[2025-07-10 09:55:09.797092] Done.
+[2025-07-10 10:00:04.287676] Starting log pull...
+[2025-07-10 10:00:04.907838] Done.
+[2025-07-10 12:10:18.513923] Starting log pull...
+[2025-07-10 12:10:20.526185] Done.
+[2025-07-10 12:15:16.926375] Starting log pull...
+[2025-07-10 12:15:19.218788] Done.
+[2025-07-10 12:20:17.264079] Starting log pull...
+[2025-07-10 12:20:18.105271] Done.
+[2025-07-10 12:25:12.015122] Starting log pull...
+[2025-07-10 12:25:12.623087] Done.
+[2025-07-10 12:30:04.253082] Starting log pull...
+[2025-07-10 12:30:05.194077] Done.
+[2025-07-10 12:35:14.649113] Starting log pull...
+[2025-07-10 12:35:15.528114] Done.
+[2025-07-10 12:40:18.365016] Starting log pull...
+[2025-07-10 12:40:19.370396] Done.
+[2025-07-10 12:45:17.062000] Starting log pull...
+[2025-07-10 12:45:17.901384] Done.
+[2025-07-10 12:50:10.768157] Starting log pull...
+[2025-07-10 12:50:11.827016] Done.
+[2025-07-10 12:55:10.649093] Starting log pull...
+[2025-07-10 12:55:11.475456] Done.
+[2025-07-10 13:00:07.420090] Starting log pull...
+[2025-07-10 13:00:08.003918] Done.
+[2025-07-10 13:05:03.397776] Starting log pull...
+[2025-07-10 13:05:04.272924] Done.
+[2025-07-10 13:10:04.945947] Starting log pull...
+[2025-07-10 13:10:05.918352] Done.
+[2025-07-10 13:15:05.266814] Starting log pull...
+[2025-07-10 13:15:05.815724] Done.
+[2025-07-10 13:20:21.792896] Starting log pull...
+[2025-07-10 13:20:22.841946] Done.
+[2025-07-10 13:25:12.546758] Starting log pull...
+[2025-07-10 13:25:13.426898] Done.
+[2025-07-10 13:30:28.869590] Starting log pull...
+[2025-07-10 13:30:30.716323] Done.
+[2025-07-10 13:35:13.144496] Starting log pull...
+[2025-07-10 13:35:14.043875] Done.
+[2025-07-10 13:40:26.463241] Starting log pull...
+[2025-07-10 13:40:28.249032] Done.
+[2025-07-10 13:45:04.576394] Starting log pull...
+[2025-07-10 13:45:05.543783] Done.
+[2025-07-10 13:50:30.248836] Starting log pull...
+[2025-07-10 13:50:31.358585] Done.
+[2025-07-10 13:55:10.015279] Starting log pull...
+[2025-07-10 13:55:10.560994] Done.
+[2025-07-10 14:00:36.764669] Starting log pull...
+[2025-07-10 14:00:40.378305] Done.
+[2025-07-10 14:05:15.684874] Starting log pull...
+[2025-07-10 14:05:18.266705] Done.
+[2025-07-10 14:10:29.493829] Starting log pull...
+[2025-07-10 14:10:30.660830] Done.
+[2025-07-10 14:15:15.825717] Starting log pull...
+[2025-07-10 14:15:16.349657] Done.
+[2025-07-10 14:27:00.797499] Starting log pull...
+[2025-07-10 14:27:04.719190] Done.
+[2025-07-10 14:30:12.777709] Starting log pull...
+[2025-07-10 14:30:13.518732] Done.
+[2025-07-10 14:35:13.473154] Starting log pull...
+[2025-07-10 14:35:14.247962] Done.
+[2025-07-10 14:40:16.412916] Starting log pull...
+[2025-07-10 14:40:17.351713] Done.
+[2025-07-10 14:45:16.499328] Starting log pull...
+[2025-07-10 14:45:17.614645] Done.
+[2025-07-10 14:50:04.893241] Starting log pull...
+[2025-07-10 14:50:06.146290] Done.
+[2025-07-10 14:55:12.499771] Starting log pull...
+[2025-07-10 14:55:13.599174] Done.
+[2025-07-10 15:00:07.963587] Starting log pull...
+[2025-07-10 15:00:09.451948] Done.
+[2025-07-10 15:05:05.012593] Starting log pull...
+[2025-07-10 15:05:05.769265] Done.
+[2025-07-10 15:10:17.158587] Starting log pull...
+[2025-07-10 15:10:18.273830] Done.
+[2025-07-10 15:15:12.393105] Starting log pull...
+[2025-07-10 15:15:13.404838] Done.
+[2025-07-10 15:20:16.994609] Starting log pull...
+[2025-07-10 15:20:18.614882] Done.
+[2025-07-10 15:50:56.442959] Starting log pull...
+[2025-07-10 15:50:56.997853] Done.
+[2025-07-10 15:55:09.731654] Starting log pull...
+[2025-07-10 15:55:10.612434] Done.
+[2025-07-10 16:00:07.886134] Starting log pull...
+[2025-07-10 16:00:08.487688] Done.
+[2025-07-10 16:05:11.147213] Starting log pull...
+[2025-07-10 16:05:11.900412] Done.
+[2025-07-10 16:10:04.997595] Starting log pull...
+[2025-07-10 16:10:05.566730] Done.
+[2025-07-10 16:15:11.193111] Starting log pull...
+[2025-07-10 16:15:15.651486] Done.
+[2025-07-10 16:20:13.224330] Starting log pull...
+[2025-07-10 16:20:15.789811] Done.
+[2025-07-10 16:25:10.149781] Starting log pull...
+[2025-07-10 16:25:10.755527] Done.
+[2025-07-10 16:30:08.388640] Starting log pull...
+[2025-07-10 16:30:09.161643] Done.
+[2025-07-10 16:35:05.559301] Starting log pull...
+[2025-07-10 16:35:06.309431] Done.
+[2025-07-10 16:40:07.860173] Starting log pull...
+[2025-07-10 16:40:08.484177] Done.
+[2025-07-10 17:00:24.570082] Starting log pull...
+[2025-07-10 17:00:25.189166] Done.
+[2025-07-10 17:15:12.259251] Starting log pull...
+[2025-07-10 17:15:13.470011] Done.
+[2025-07-10 17:20:09.474085] Starting log pull...
+[2025-07-10 17:20:10.144115] Done.
+[2025-07-10 17:25:08.906094] Starting log pull...
+[2025-07-10 17:25:09.526220] Done.
+[2025-07-10 17:30:15.045366] Starting log pull...
+[2025-07-10 17:30:15.650855] Done.
+[2025-07-10 17:35:20.498072] Starting log pull...
+[2025-07-10 17:35:37.180051] Done.
+[2025-07-10 17:40:33.441589] Starting log pull...
+[2025-07-10 17:40:35.604296] Done.
+[2025-07-10 17:45:20.840282] Starting log pull...
+[2025-07-10 17:45:22.221690] Done.
+[2025-07-10 17:50:30.191650] Starting log pull...
+[2025-07-10 17:50:31.370417] Done.
+[2025-07-10 17:55:35.531654] Starting log pull...
+[2025-07-10 17:55:37.866381] Done.
+[2025-07-10 18:00:11.041032] Starting log pull...
+[2025-07-10 18:00:11.762152] Done.
+[2025-07-10 18:06:55.578489] Starting log pull...
+[2025-07-10 18:06:56.724433] Done.
+[2025-07-10 18:10:38.078926] Starting log pull...
+[2025-07-10 18:10:38.788635] Done.
+[2025-07-10 22:35:11.178845] Starting log pull...
+[2025-07-10 22:35:11.727992] Done.
+[2025-07-11 05:55:42.376526] Starting log pull...
+[2025-07-11 05:55:43.684534] Done.

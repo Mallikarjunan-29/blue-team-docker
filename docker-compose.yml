@@ -22,10 +22,27 @@ services:
       - ./splunk/splunk_logs/guardduty:/data/ingest/guardduty
       - ./splunk/splunk_logs/gcp:/data/ingest/gcp
       - ./config:/opt/splunk/etc/apps/blue-team-docker
+      - /var/lib/docker/containers:/containers:ro
+    networks:
+      - splunk-net
 
     restart: unless-stopped
 
-
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=blueteamlab@123
+      - N8N_FLAGS=--enable-community-packages
+    volumes:
+      - ./n8n_data:/home/node/.n8n
+    networks:
+      - splunk-net
+    restart: unless-stopped
 networks:
   splunk-net:
     driver: bridge
