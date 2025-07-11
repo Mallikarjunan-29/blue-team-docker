@@ -9,13 +9,18 @@ Ideal for SOC analysts, blue teamers, and detection engineers who want to unders
 
 🔍 What This Lab Does
 
-✅ Ingests AWS CloudTrail logs from S3
-✅ Pulls GuardDuty and GCP Audit logs via Python scripts
-✅ Uses cron jobs to automate ingestion
-✅ Parses logs using props.conf, inputs.conf, and indexes.conf
-✅ All config lives inside a Splunk App, mounted via Docker
-✅ Fully modular — easily extendable to other cloud providers or sources
-✅ Minimalist but powerful: no GUI bloat, just raw detection muscle
+✅ Ingests AWS CloudTrail logs directly from S3
+✅ Pulls GuardDuty and GCP Audit Logs using custom Python scripts
+✅ Automates ingestion with cron jobs — fully hands-off
+✅ Parses logs using props.conf, inputs.conf, and indexes.conf — Splunk-native
+✅ All Splunk config lives inside a Docker-mounted custom app
+✅ Fully modular — plug in any cloud provider or log source
+✅ Now includes Splunk + n8n in a single Docker Compose stack
+✅ Sends real-time alerts via Telegram and Gmail from Splunk using n8n
+
+This isn’t a “SIEM toy.”
+It’s a practical blueprint for building a real-world detection pipeline.
+
 
 
 ---
@@ -49,91 +54,84 @@ blue-team-docker/
 ---
 
 ⚙️ Dependencies
+Docker
 
 Python 3.x
 
-Docker
+AWS CLI
 
-boto3, botocore, and google-cloud-storage Python packages
+GCP CLI (gcloud)
 
-GCP CLI (gcloud) + AWS CLI configured with least-privilege access
+Python packages:
 
-
-Install Python:
-
-sudo apt update && sudo apt install python3 python3-pip -y
-
-Install Boto3:
-
-pip3 install boto3 botocore
-
-Install GCP SDK:
-
-sudo pip install google-cloud-storage
-sudo snap install google-cloud-sdk --classic
-
-
----
-
-💪 AWS CLI Setup
-
-1. Install AWS CLI:
-
-
-
+bash
+Copy
+Edit
+pip install boto3 botocore google-cloud-storage
+☁️ Cloud Setup (Quick)
+AWS CLI
+bash
+Copy
+Edit
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
-
-2. Configure it:
-
-
-
 aws configure
+Use read-only credentials to pull from S3/GuardDuty.
 
-Use read-only credentials for pulling logs from S3 buckets.
-
-
----
-
-☁️ GCP CLI Setup
-
+GCP SDK
+bash
+Copy
+Edit
+sudo snap install google-cloud-sdk --classic
 gcloud auth application-default login
 gcloud auth application-default set-quota-project <YOUR_PROJECT_NAME>
-
-
----
-
-🚀 Running the Lab
-
+🚀 How to Run the Lab
+bash
+Copy
+Edit
 git clone https://github.com/Mallikarjunan-29/blue-team-docker.git
 cd blue-team-docker
-
 chmod +x setup-cron.sh
-./setup-cron.sh  # sets up cron job to pull logs
+./setup-cron.sh
+docker compose up -d
+➡️ Access Splunk: https://localhost:8000
+➡️ Access n8n: http://localhost:5678
+(Default credentials are in the docker-compose.yml)
 
-docker compose up -d  # starts Splunk with mounted config
+📬 What’s New
+🔁 Alerting with n8n
+This update adds workflow-based alerting with n8n, a powerful open-source automation tool:
 
-Access Splunk at 👉 https://localhost:8000
-Login: admin / password from docker-compose.yml
+✅ Real-time Telegram alerts for specific Splunk detections
 
+✅ Gmail notifications with contextual event info
 
----
+✅ Easily extendable to Slack, Discord, Teams, webhooks, or SIEMs
 
-🌟 Like it? Star it. Use it. Fork it.
+👨‍💻 Ideal Use Cases
+Blue Teamers building a home lab with full control over detection paths
 
-This project is open-source and built to be extended. If it helps you learn or speeds up your detection engineering workflow:
+Detection engineers writing custom detections with real alert triggers
 
-🔗 Give it a star
-👁️ Fork and remix it
-🔧 Open issues or improvements — collaboration welcome
+SOC analysts preparing for interviews or showing off cloud-native detection skills
 
+GRC pros learning log pipelines from scratch
 
----
+🌟 Like It? Fork It. Extend It.
+This is a detection engineer’s playground, not a black box. If it helps you:
 
-👨‍💼 Created By
+⭐ Star the repo
 
+🍴 Fork and remix it
+
+🛠️ Contribute ideas or PRs
+
+📣 Share it with fellow blue teamers
+
+👨‍🏫 Built By
 Mallikarjunan K (Arjun)
-Cybersecurity | SOC | Blue Team | DevSecOps
-2025 Edition — blue-team-docker
+SOC & Cloud Security | Detection Engineering | DevSecOps
+LinkedIn | Medium | 2025 Edition
+
 
