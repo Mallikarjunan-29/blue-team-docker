@@ -18,7 +18,7 @@ jobs:
       - name: Fetch clone traffic from GitHub API
         env:
           GH_TOKEN: ${{ secrets.PAT_GITHUB_TRAFFIC }}
-          REPO: Mallikarjunan-29/blue-team-docker
+          REPO: ${{ github.repository }}
         run: |
           DATE=$(date +%F)
            mkdir -p traffic_logs/$DATE
