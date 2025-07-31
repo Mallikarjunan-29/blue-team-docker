@@ -1,5 +1,46 @@
 {
-  "message": "Resource not accessible by personal access token",
-  "documentation_url": "https://docs.github.com/rest/metrics/traffic#get-repository-clones",
-  "status": "403"
+  "count": 12,
+  "uniques": 7,
+  "clones": [
+    {
+      "timestamp": "2025-07-18T00:00:00Z",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "timestamp": "2025-07-19T00:00:00Z",
+      "count": 2,
+      "uniques": 2
+    },
+    {
+      "timestamp": "2025-07-22T00:00:00Z",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "timestamp": "2025-07-23T00:00:00Z",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "timestamp": "2025-07-24T00:00:00Z",
+      "count": 3,
+      "uniques": 2
+    },
+    {
+      "timestamp": "2025-07-26T00:00:00Z",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "timestamp": "2025-07-28T00:00:00Z",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "timestamp": "2025-07-31T00:00:00Z",
+      "count": 2,
+      "uniques": 1
+    }
+  ]
 }
