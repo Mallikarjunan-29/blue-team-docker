@@ -21,17 +21,21 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           DATE=$(date +%F)
-           mkdir -p traffic_logs/$DATE
+          mkdir -p traffic_logs/$DATE
 
           # Clone data
           curl -H "Authorization: token $GH_TOKEN" \
             https://api.github.com/repos/$REPO/traffic/clones \
             -o traffic_logs/$DATE/clones.json
+            
 
           # Visitor data
           curl -H "Authorization: token $GH_TOKEN" \
             https://api.github.com/repos/$REPO/traffic/views \
             -o traffic_logs/$DATE/visitors.json
+            
+      - name: List logged files
+        run: ls -l traffic_logs/$DATE
             
       - name: Commit and push logs
         run: |
