@@ -55,6 +55,9 @@ jobs:
           views_resp.raise_for_status()
           views_data = views_resp.json()
 
+          if not os.path.exists('logs_repo'):
+              os.makedirs('logs_repo')
+
           if os.path.isfile(logs_path):
               with open(logs_path, 'r') as f:
                   logs = json.load(f)
