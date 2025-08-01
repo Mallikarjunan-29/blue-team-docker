@@ -22,6 +22,11 @@ jobs:
       - name: Clone the log repo
         run: |
           git clone https://x-access-token:${{ secrets.PAT_GITHUB_TRAFFIC }}@github.com/Mallikarjunan-29/git-clone-logs.git
+      - name: Verify logs_repo clone
+        run: |
+          ls -la
+          ls -la logs_repo
+          cat logs_repo/.git/config
 
       - name: Install Python dependencies
         run: |
