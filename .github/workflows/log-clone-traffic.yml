@@ -23,7 +23,7 @@ jobs:
         env:
           LOG_REPO_PAT: ${{ secrets.PAT_LOG_TRAFFIC }}
         run: |
-          git clone https://x-access-token:${LOG_REPO_PAT}@github.com/Mallikarjunan-29/git-clone-logs.git logs_repo
+          git clone "https://x-access-token:${{ secrets.LOG_REPO_PAT }}@github.com/Mallikarjunan-29/git-clone-logs.git"
 
       - name: Install Python dependencies
         run: |
