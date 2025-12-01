@@ -1,0 +1,6 @@
+n8n_data
+traffic_logs/
+.env
+n8n_export
+postgres_data
+splunk/splunk_logs/

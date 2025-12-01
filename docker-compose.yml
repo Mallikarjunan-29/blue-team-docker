@@ -1,0 +1,131 @@
+version: '3.8'
+
+volumes:
+  n8n_data:
+  redis_data:
+  postgres_data:
+
+x-shared: &shared
+  image: n8nio/n8n:latest
+  restart: unless-stopped
+  environment:
+    - EXECUTIONS_MODE=queue
+    - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
+    - QUEUE_BULL_REDIS_HOST=redis
+    - QUEUE_BULL_REDIS_PORT=6379
+    - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
+    - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+    - N8N_BASIC_AUTH_ACTIVE=${N8N_BASIC_AUTH_ACTIVE}
+    - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
+    - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+    - DB_TYPE=postgresdb
+    - DB_POSTGRESDB_HOST=postgres
+    - DB_POSTGRESDB_PORT=5432
+    - DB_POSTGRESDB_DATABASE=${POSTGRES_DB}
+    - DB_POSTGRESDB_USER=${POSTGRES_NON_ROOT_USER}
+    - DB_POSTGRESDB_PASSWORD=${POSTGRES_NON_ROOT_PASSWORD}
+    - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+  volumes:
+    #- ./n8n_data:/home/node/.n8n
+    - ./n8n_export:/home/node/.n8n_export
+  networks:
+    - splunk-net
+
+services:
+  # Splunk service
+  splunk:
+    image: splunk/splunk:latest
+    container_name: splunk
+    mem_limit: 1G
+    environment:
+      SPLUNK_GENERAL_TERMS: --accept-sgt-current-at-splunk-com
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: ${SPLUNK_PASSWORD}
+      SPLUNK_HTTP_ENABLE_SSL: "true"
+      SPLUNK_ENABLE_LISTEN: tcp 1514
+      SPLUNK_MEM_LIMIT: 256M
+    ports:
+      - "8000:8000"
+      - "8088:8088"
+      - "9997:9997"
+      - "1514:1514"
+      - "8089:8089"
+    volumes:
+      - ./splunk/splunk_logs/aws:/data/ingest/aws
+      - ./splunk/splunk_logs/guardduty:/data/ingest/guardduty
+      - ./splunk/splunk_logs/gcp:/data/ingest/gcp
+      - ./config:/opt/splunk/etc/apps/blue-team-docker
+      - /var/lib/docker/containers:/containers:ro
+      - ./splunk/splunk_logs/botsv3_data_set:/opt/splunk/etc/apps/botsv3_data_set
+      - ./splunk/splunk_logs/botsv3_index_data/botsv3:/opt/splunk/var/lib/splunk/botsv3
+    networks:
+      - splunk-net
+    restart: unless-stopped
+
+  # Redis
+  redis:
+    image: redis:6-alpine
+    container_name: redis
+    volumes:
+      - redis_data:/data
+    networks:
+      - splunk-net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Postgres
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_NON_ROOT_USER=${POSTGRES_NON_ROOT_USER}
+      - POSTGRES_NON_ROOT_PASSWORD=${POSTGRES_NON_ROOT_PASSWORD}
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+      - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
+    networks:
+      - splunk-net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # n8n main server
+  n8n:
+    <<: *shared
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      
+      
+
+  # n8n worker
+  n8n-worker:
+    <<: *shared
+    container_name: n8n-worker
+    command: ["worker"]
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      
+      
+
+networks:
+  splunk-net:
+    driver: bridge

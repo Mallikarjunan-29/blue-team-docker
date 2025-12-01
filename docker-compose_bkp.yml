@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  splunk:
+    image: splunk/splunk:latest
+    container_name: splunk
+    mem_limit: 1G
+    environment:
+      SPLUNK_GENERAL_TERMS: --accept-sgt-current-at-splunk-com
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_PASSWORD: blueteamlab@123 #change this if you want a different one
+      SPLUNK_HTTP_ENABLE_SSL: "true"
+      SPLUNK_ENABLE_LISTEN: tcp 1514
+      SPLUNK_MEM_LIMIT: 256M
+    ports:
+      - "8000:8000"  # Splunk Web UI
+      - "8088:8088"  # HTTP Event Collector
+      - "9997:9997"  # Universal forwarder port
+      - "1514:1514"
+      - "8089:8089"
+    volumes:
+      - ./splunk/splunk_logs/aws:/data/ingest/aws
+      - ./splunk/splunk_logs/guardduty:/data/ingest/guardduty
+      - ./splunk/splunk_logs/gcp:/data/ingest/gcp
+      - ./config:/opt/splunk/etc/apps/blue-team-docker
+      - /var/lib/docker/containers:/containers:ro
+      - ./splunk/splunk_logs/botsv3_data_set:/opt/splunk/etc/apps/botsv3_data_set
+      - ./splunk/splunk_logs/botsv3_index_data/botsv3:/opt/splunk/var/lib/splunk/botsv3
+    networks:
+      - splunk-net
+
+    restart: unless-stopped
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=blueteamlab@123
+      - N8N_FLAGS=--enable-community-packages
+      - EXECUTIONS_MODE=queue
+      - QUEUE_BULL_REDIS_HOST=redis
+      - GENERIC_TIMEZONE=America/New_York
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+    volumes:
+      - ./n8n_data:/home/node/.n8n
+    networks:
+      - splunk-net
+    depends_on:
+      - redis
+    restart: unless-stopped
+  
+  n8n-worker:
+    image: n8nio/n8n:latest
+    environment:
+      - EXECUTIONS_MODE=queue
+      - QUEUE_BULL_REDIS_HOST=redis
+      - GENERIC_TIMEZONE=America/New_York
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+    volumes:
+      - ./n8n_data:/home/node/.n8n
+    command: ["worker"]
+    depends_on:
+      - redis
+    networks:
+      - splunk-net
+    
+
+  redis:
+    image: redis:6
+    restart: unless-stopped
+    networks:
+    - splunk-net
+    
+networks:
+  splunk-net:
+    driver: bridge
+
